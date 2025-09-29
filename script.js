@@ -159,5 +159,5 @@ const carData = {
     const messagesBox = document.getElementById("form-messages");
   
     // Create "manual model" input if user picks Other
-    let manualModelInput =
-  
+      let manualModelInput = null; // Initialize with a default value
+    });
