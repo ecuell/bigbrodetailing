@@ -1,144 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Big Bro Detailing</title>
-  <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
-  <!-- Navigation -->
-  <nav>
-    <div class="personal-logo">
-      <a href="#home"><img src="assets/homelogo.png" class="nav-logo" alt="Big Bro Detailing Logo"></a>
-    </div>
-    <div class="nav-right">
-      <ul>
-        <li><a href="#services" class="nav_link--anchor">Car Detailing</a></li>
-        <li><a href="#about" class="nav_link--anchor">About Us</a></li>
-        <li><a href="#contact" class="nav_link--anchor">Contact</a></li>
-      </ul>
-      <a href="#schedule" class="nav_link--anchor nav_link--anchor--primary">Schedule Now</a>
-    </div>
-  </nav>
-  
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Big Bro Detailing</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav class="nav">
+      <div class="nav-left">
+        <a href="#home" class="logo-link">
+          <img
+            src="assets/homelogo.png"
+            alt="Big Bro Detailing logo"
+            class="logo"
+          />
+        </a>
+      </div>
 
-  <!-- Hero -->
-  <section id="home" class="home">
-    <img class="background-img" src="assets/homepagebigbro.jpg" alt="">
-    <div class="home-content">
-      <h1>Big Bro Detailing</h1>
-      <p>Your car's best friend!</p>
+      <button
+        class="nav-toggle"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+        aria-label="Toggle menu"
+      >
+        <span class="hamburger"></span>
+      </button>
+
+      <div class="nav-right" id="primary-navigation">
+        <ul class="nav-list" role="menubar">
+          <li role="none">
+            <a role="menuitem" href="#services" class="nav-link">Services</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="#about" class="nav-link">About</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="#contact" class="nav-link">Contact</a>
+          </li>
+        </ul>
+        <a href="#schedule" class="cta btn-primary">Schedule Now</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <header id="home" class="hero">
+      <img src="assets/homepagebigbro.jpg" alt="" class="hero-bg" />
+      <div class="hero-over"></div>
+
+      <div class="hero-content">
+        <div class="logo-circle">
+          <img src="assets/homelogo.png" alt="Big Bro logo" />
+        </div>
+        <h1>Big Bro Detailing</h1>
+        <p class="lead">
+          Precision car detailing that protects your ride—and your pride.
+        </p>
+        <div class="hero-actions">
+          <a href="#services" class="btn-outline">Our Packages</a>
+          <a href="#schedule" class="btn-primary">Book Now</a>
+        </div>
+        <div class="hero-cta-note">
+          Mobile & in-shop service • Satisfaction guaranteed
+        </div>
+      </div>
+    </header>
+
+    <!-- SERVICES -->
+    <section id="services" class="section services">
+      <div class="section-inner">
+        <h2>Our Packages</h2>
+        <div class="cards">
+          <article class="card">
+            <div class="card-head">
+              <h3>Exterior Package</h3>
+              <div class="price">From <strong>$100</strong></div>
+            </div>
+            <p class="card-body">
+              Complete exterior wash, wheel clean, bug/tar removal and tire
+              shine.
+            </p>
+            <button class="toggle-details">Show details ▾</button>
+            <ul class="card-details">
+              <li>Hand wash & rinse</li>
+              <li>Wheel & tire detailing</li>
+              <li>Clay bar and bug removal (as needed)</li>
+              <li>Sealant spray or quick wax</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3>Interior Package</h3>
+              <div class="price">From <strong>$169</strong></div>
+            </div>
+            <p class="card-body">
+              Vacuum, shampoo, dashboard, leather care and odor elimination.
+            </p>
+            <button class="toggle-details">Show details ▾</button>
+            <ul class="card-details">
+              <li>Full interior vacuum & shampoo</li>
+              <li>Leather/vinyl treatment</li>
+              <li>Carpet extraction (stain removal)</li>
+              <li>Window cleaning inside</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3>Signature Duo</h3>
+              <div class="price">From <strong>$229</strong></div>
+            </div>
+            <p class="card-body">
+              Full interior + exterior package with spray-wax gloss finish.
+            </p>
+            <button class="toggle-details">Show details ▾</button>
+            <ul class="card-details">
+              <li>Complete interior + exterior service</li>
+              <li>Spray wax or gloss finish</li>
+              <li>Final inspection & touch-ups</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <!-- ABOUT (brief) -->
+    <section id="about" class="section about">
+      <div class="section-inner">
+        <h2>About Big Bro</h2>
+        <p class="narrow">
+          We’re a family-owned detailer focused on high-quality finishes,
+          reliable service, and protecting the value of your vehicle.
+        </p>
+      </div>
+    </section>
+<!-- ... keep everything above unchanged ... -->
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="section reviews-section">
+    <div class="section-inner">
+      <h2>Customer Reviews</h2>
+      <p class="reviews-intro">See what our customers are saying about Big Bro Detailing.</p>
+      <div class="reviews-widget">
+        <!-- Elfsight Google Reviews -->
+        <script src="https://elfsightcdn.com/platform.js" async></script>
+        <div class="elfsight-app-4b8d112f-f12c-483b-9eba-8b851dff1432" data-elfsight-app-lazy></div>
+      </div>
     </div>
   </section>
 
-  <!-- Services -->
-  <section id="services" class="services">
-    <h2>Our Packages</h2>
-    <div class="packages-container">
-      <div class="package">
-        <h3>Exterior Package</h3>
-        <p>From $100.00</p>
-        <button class="toggle-details">Details</button>
-        <div class="details">
-          <ul>
-            <li>Exterior wash</li>
-            <li>Bug & tar removal</li>
-            <li>Deep wheel cleaning</li>
-            <li>Tire shine</li>
-            <li>Windows & mirrors</li>
-          </ul>
+<!-- ... footer below remains unchanged ... -->
+<!-- SCHEDULE / BOOKING -->
+<section id="schedule" class="section schedule-section">
+    <div class="section-inner form-card">
+      <h2>Book Your Detailing Appointment</h2>
+      <form id="booking-form" novalidate>
+        <div class="form-row">
+          <label for="name">Name *</label>
+          <input id="name" type="text" required placeholder="Full name" />
         </div>
-      </div>
-      <div class="package">
-        <h3>Interior Package</h3>
-        <p>From $169.00</p>
-        <button class="toggle-details">Details</button>
-        <div class="details">
-          <ul>
-            <li>Vacuum & shampoo carpets/seats</li>
-            <li>Dashboard & console detail</li>
-            <li>Stain extraction</li>
-          </ul>
+
+        <div class="form-row split">
+          <div>
+            <label for="email">Email *</label>
+            <input
+              id="email"
+              type="email"
+              required
+              placeholder="you@example.com"
+            />
+          </div>
+          <div>
+            <label for="phone">Phone *</label>
+            <input
+              id="phone"
+              type="tel"
+              required
+              placeholder="(555) 555-5555"
+            />
+          </div>
         </div>
-      </div>
-      <div class="package">
-        <h3>Signature Duo</h3>
-        <p>From $229.00</p>
-        <button class="toggle-details">Details</button>
-        <div class="details">
-          <ul>
-            <li>Full exterior + interior package</li>
-            <li>Spray-wax gloss finish</li>
-          </ul>
+
+        <div class="form-row split">
+          <div>
+            <label for="car-make">Car Make *</label>
+            <select id="car-make" required>
+              <option value="">— Select Make —</option>
+              <option>Toyota</option>
+              <option>Honda</option>
+              <option>Ford</option>
+              <option>BMW</option>
+              <option>Mercedes-Benz</option>
+              <option>Tesla</option>
+              <option>Jeep</option>
+              <option>Chevrolet</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="car-model">Car Model *</label>
+            <select id="car-model" required>
+              <option value="">— Select Model —</option>
+            </select>
+          </div>
         </div>
-      </div>
+
+        <div class="form-row">
+          <label for="package">Choose Package *</label>
+          <select id="package" required>
+            <option value="">— Select Package —</option>
+            <option value="Exterior">Exterior</option>
+            <option value="Interior">Interior</option>
+            <option value="Signature Duo">Signature Duo</option>
+          </select>
+        </div>
+
+        <fieldset class="addons" aria-label="Optional add-ons">
+          <legend>Optional Add-ons</legend>
+          <label
+            ><input type="checkbox" name="addons" value="Pet Hair Removal" />
+            Pet Hair Removal (+$50)</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              name="addons"
+              value="Engine Bay Cleaning"
+            />
+            Engine Bay Cleaning (+$40)</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              name="addons"
+              value="Headlight Restoration"
+            />
+            Headlight Restoration (+$60)</label
+          >
+          <label
+            ><input type="checkbox" name="addons" value="Ceramic Coating" />
+            Ceramic Coating (+$200)</label
+          >
+        </fieldset>
+
+        <div id="quote-box" class="quote-box">
+          Choose make, model, package and add-ons to see an estimated quote.
+        </div>
+
+        <div class="form-row">
+          <label for="notes">Notes</label>
+          <textarea
+            id="notes"
+            rows="3"
+            placeholder="Any special instructions"
+          ></textarea>
+        </div>
+
+        <div class="form-row">
+          <button type="submit" class="btn-primary large">
+            Request Appointment
+          </button>
+        </div>
+
+        <div
+          id="form-messages"
+          class="form-messages"
+          aria-live="polite"
+        ></div>
+      </form>
     </div>
   </section>
-
-  <!-- Booking Form -->
-  <section id="schedule" class="schedule">
-    <h2>Book Your Detailing Appointment</h2>
-    <form id="booking-form">
-      <label for="name">Name*</label>
-      <input type="text" id="name" required>
-
-      <label for="email">Email*</label>
-      <input type="email" id="email" required>
-
-      <label for="phone">Phone*</label>
-      <input type="tel" id="phone" required>
-
-      <label for="car-make">Car Make*</label>
-      <select id="car-make" required>
-        <option value="">-- Select Make --</option>
-        <option value="Toyota">Toyota</option>
-        <option value="Honda">Honda</option>
-        <option value="Ford">Ford</option>
-        <option value="BMW">BMW</option>
-        <option value="Mercedes-Benz">Mercedes-Benz</option>
-        <option value="Tesla">Tesla</option>
-        <option value="Jeep">Jeep</option>
-        <option value="Chevrolet">Chevrolet</option>
-        <option value="Other">Other</option>
-      </select>
-
-      <label for="car-model">Car Model*</label>
-      <select id="car-model" required>
-        <option value="">-- Select Model --</option>
-      </select>
-
-      <label for="package">Choose Package*</label>
-      <select id="package" required>
-        <option value="">-- Select Package --</option>
-        <option value="Exterior">Exterior</option>
-        <option value="Interior">Interior</option>
-        <option value="Signature Duo">Signature Duo</option>
-      </select>
-
-      <!-- Optional Add-ons -->
-      <fieldset class="addons">
-        <legend>Optional Add-ons</legend>
-        <label><input type="checkbox" name="addons" value="Pet Hair Removal"> Pet Hair Removal (+$50)</label>
-        <label><input type="checkbox" name="addons" value="Engine Bay Cleaning"> Engine Bay Cleaning (+$40)</label>
-        <label><input type="checkbox" name="addons" value="Headlight Restoration"> Headlight Restoration (+$60)</label>
-        <label><input type="checkbox" name="addons" value="Ceramic Coating"> Ceramic Coating (+$200)</label>
-      </fieldset>
-
-      <!-- Quote -->
-      <div id="quote-box" class="quote-box">
-        Choose make, model, package and add-ons to see an estimated quote.
+    <!-- CONTACT -->
+    <footer id="contact" class="footer">
+      <div class="section-inner footer-inner">
+        <div>
+          <h3>Big Bro Detailing</h3>
+          <p>4776 W. 8450 S. - West Jordan, UT. 84088</p>
+          <p>(385) 590-8251 • contact@bigbrodetail.com</p>
+        </div>
+        <div class="footer-right">
+          © <span id="year"></span> Big Bro Detailing
+        </div>
       </div>
+    </footer>
 
-      <label for="notes">Notes</label>
-      <textarea id="notes" rows="4"></textarea>
-
-      <button type="submit">Submit Booking</button>
-    </form>
-    <div id="form-messages"></div>
-  </section>
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
-
