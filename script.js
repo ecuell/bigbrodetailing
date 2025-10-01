@@ -185,14 +185,76 @@ document.addEventListener("DOMContentLoaded", () => {
   updateQuote();
 });
 /* Reviews section JS enhancements */
-document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scroll to reviews when "reviews" hash is clicked
-    const reviewsLink = document.querySelector('a[href="#reviews"]');
-    if (reviewsLink) {
-      reviewsLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        document.querySelector('#reviews').scrollIntoView({ behavior: 'smooth' });
-      });
-    }
+document.addEventListener("DOMContentLoaded", () => {
+  // Smooth scroll to reviews when "reviews" hash is clicked
+  const reviewsLink = document.querySelector('a[href="#reviews"]');
+  if (reviewsLink) {
+    reviewsLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      document.querySelector("#reviews").scrollIntoView({ behavior: "smooth" });
+    });
+  }
+});
+// Before/After slider logic
+document.querySelectorAll(".ba-container").forEach((container) => {
+  const overlay = container.querySelector(".ba-overlay");
+  const handle = container.querySelector(".ba-handle");
+
+  let active = false;
+
+  const startSlide = () => {
+    active = true;
+  };
+  const endSlide = () => {
+    active = false;
+  };
+  const moveSlide = (x) => {
+    let rect = container.getBoundingClientRect();
+    let position = Math.min(Math.max(0, x - rect.left), rect.width);
+    let percent = (position / rect.width) * 100;
+    overlay.style.width = percent + "%";
+    handle.style.left = percent + "%";
+  };
+
+  container.addEventListener("mousedown", (e) => {
+    startSlide();
+    moveSlide(e.pageX);
   });
-  
+  container.addEventListener("mouseup", endSlide);
+  container.addEventListener("mouseleave", endSlide);
+  container.addEventListener("mousemove", (e) => {
+    if (active) moveSlide(e.pageX);
+  });
+
+  container.addEventListener("touchstart", (e) => {
+    startSlide();
+    moveSlide(e.touches[0].pageX);
+  });
+  container.addEventListener("touchend", endSlide);
+  container.addEventListener("touchcancel", endSlide);
+  container.addEventListener("touchmove", (e) => {
+    if (active) moveSlide(e.touches[0].pageX);
+  });
+});
+
+// Carousel navigation
+const carousel = document.querySelector(".ba-carousel");
+const slides = document.querySelectorAll(".ba-slide");
+let currentIndex = 0;
+
+function showSlide(index) {
+  if (index < 0) index = slides.length - 1;
+  if (index >= slides.length) index = 0;
+  currentIndex = index;
+  carousel.scrollTo({
+    left: carousel.offsetWidth * currentIndex,
+    behavior: "smooth",
+  });
+}
+
+document.querySelector(".ba-nav.prev").addEventListener("click", () => {
+  showSlide(currentIndex - 1);
+});
+document.querySelector(".ba-nav.next").addEventListener("click", () => {
+  showSlide(currentIndex + 1);
+});
