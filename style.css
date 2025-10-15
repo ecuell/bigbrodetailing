@@ -54,7 +54,7 @@ body {
   gap: 12px;
 }
 .logo {
-  height: 46px;
+  height: 42px;
   display: block;
 }
 
@@ -158,6 +158,7 @@ body {
   z-index: 0;
   transform: scale(1.03);
   filter: contrast(0.95) saturate(0.95);
+  background: linear-gradient(to bottom, white, var(--bg));
 }
 
 /* subtle dark overlay for readability */
@@ -165,7 +166,8 @@ body {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    to bottom rgba(0, 0, 0, 0.45),
+    to bottom,
+    rgba(0, 0, 0, 0.45),
     rgba(0, 0, 0, 0.25)
   );
   z-index: 1;
@@ -374,6 +376,81 @@ body {
 .ba-nav:hover {
   background: #a60000;
 }
+/* ABOUT */
+.section.about {
+  background: linear-gradient(to bottom right, #f8f9fa, #ffffff);
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.section.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+.section.about p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.section.about .narrow {
+  max-width: 700px;
+  margin: 0 auto 20px;
+}
+
+/* --- Founders Section --- */
+.founders {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.founders-photo {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.founders-photo:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.founders-caption {
+  margin-top: 15px;
+}
+
+.founders-caption h3 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.founders-caption p {
+  color: #777;
+  font-style: italic;
+}
+
+/* Responsive layout for larger screens */
+@media (min-width: 768px) {
+  .founders {
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    text-align: left;
+  }
+
+  .founders-caption {
+    max-width: 400px;
+  }
+}
 
 /* SERVICES */
 .services h2 {
@@ -573,12 +650,15 @@ textarea:focus {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background: transparent;
     position: absolute;
     right: 16px;
     top: 68px;
     padding: 12px;
     border-radius: 8px;
+    background: rgba(34, 34, 34, 0.95);
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
   }
   .nav-right.show .btn-primary {
     padding: 8px 14px;
